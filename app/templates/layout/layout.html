@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Language" content="ja" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<title>Budget Book</title>
+	<style>
+body {
+	margin: 0;
+	padding: 0;
+}
+#main {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	width: 200%;
+}
+#main:after {
+	content: " ";
+	display: block;
+	clear: both;
+}
+#input {
+	float: left;
+	width: 50%;
+}
+#monthly {
+	float: left;
+	width: 50%;
+}
+	</style>
+
+</head>
+<body>
+	<?php require_once TEMPLATE_DIR . $this->template . '.html'; ?>
+</body>
+</html>

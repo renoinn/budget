@@ -1,14 +1,15 @@
 <?php
-require "common/config.php";
-require "vendor/autoload.php";
+require_once dirname(__FILE__).'/config.php';
+require_once dirname(dirname(__FILE__)).'/vendor/autoload.php';
 use Abraham\TwitterOAuth\TwitterOAuth;
 
-class Login {
+class Auth {
 
 	public $info = null;
 
 	public function checkLogin() {
 		$this->info = $this->getLoginInfo();
+error_log(print_r($this->info, true));
 		if(!$this->info) {
 			return false;
 		}
