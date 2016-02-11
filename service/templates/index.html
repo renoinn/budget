@@ -1,0 +1,95 @@
+<nav>
+      <a href="/budget">Budget Book</a>
+</nav>
+<div id="control">
+</div>
+<div id="main">
+	<?php if(isset($this->data['spending']) && 0 < count($this->data['spending'])): ?>
+	<div id="spending">
+		<table>
+			<tr><th>金額</th><th>日付</th><th>分類</th><th>カテゴリ</th><th>メモ</th></tr>
+		<?php foreach($this->data['spending'] as $item): ?>
+			<tr>
+			<td><?php echo $item['amount']; ?></td>
+			<td><?php echo $item['created']; ?></td>
+			<td><?php echo $item['type']; ?></td>
+			<td><?php echo $item['category']; ?></td>
+			<td><?php echo $item['memo']; ?></td>
+			</tr>
+		<?php endforeach; ?>
+		</table>
+	</div>
+	<?php endif; ?>
+	<div id="add_spending">
+		<form method="POST" action="/budget/add_spending.php">
+			<input type="hidden" name="created" value="2016-01-06 00:20:11" />
+			<dl><dt>金額</dt><dd><input type="text" name="amount" /></dd></dl>
+			<dl><dt>日付</dt><dd>12月26日<span><a href="">変更</a></span></dd></dl>
+			<dl><dt>分類</dt><dd>
+				<select name="type">
+					<option value="private" selected="selected">私費</option>
+					<option value="expense">経費</option>
+				</select>
+			</dd></dl>
+			<dl><dt>カテゴリ</dt><dd>
+				<select name="category">
+					<option value="食費" selected="selected">食費</option>
+					<option value="交通費<">交通費</option>
+					<option value="交際費">交際費</option>
+					<option value="趣味">趣味</option>
+				</select>
+			</dd></dl>
+			<dl>
+				<dt>メモ</dt>
+				<dd><textarea name="memo"></textarea></dd>
+			</dl>
+			<div><input type="submit" value="保存"/></div>
+		</form>
+	</div>
+	<div id="monthly">
+		<div id="sum">
+			<p>出費:￥100,290</p>
+		</div>
+	</div>
+	<div id="add_category">
+		<form method="POST" action="/budget/add_category.php">
+			<input type="hidden" name="type">
+			<dl><dt>カテゴリ名</dt><dd><input type="text" name="category"></dd>
+			<div><input type="submit" value="追加"/></div>
+		</form>
+	</div>
+	<div id="add_fixed_spending">
+		<form method="POST" action="/budget/add_fixed_spending.php">
+			<dl><dt>金額</dt><dd><input type="text" name="amount" /></dd></dl>
+			<dl><dt>日付</dt><dd>12月26日<span><a href="">変更</a></span></dd></dl>
+			<dl><dt>分類</dt><dd>
+				<select name="type">
+					<option value="private" selected="selected">私費</option>
+					<option value="expense">経費</option>
+				</select>
+			</dd></dl>
+			<dl><dt>カテゴリ</dt><dd>
+				<select name="category">
+					<option value="食費" selected="selected">食費</option>
+					<option value="交通費<">交通費</option>
+					<option value="交際費">交際費</option>
+					<option value="趣味">趣味</option>
+				</select>
+			</dd></dl>
+			<dl><dt>頻度</dt><dd>
+				<select name="frequency">
+					<option value="monthly" selected="selected">毎月</option>
+					<option value="yearly">毎年</option>
+					<option value="daily">毎日</option>
+				</select>
+			</dd></dl>
+			<dl>
+				<dt>メモ</dt>
+				<dd><textarea name="memo"></textarea></dd>
+			</dl>
+			<div><input type="submit" value="保存"/></div>
+		</form>
+	</div>
+	<div id="add_income">
+	</div>
+</div>

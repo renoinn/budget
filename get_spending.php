@@ -3,8 +3,6 @@ require dirname(__FILE__)."/service/common/config.php";
 require dirname(__FILE__)."/service/common/auth.php";
 require dirname(__FILE__)."/service/common/view.php";
 require dirname(__FILE__)."/service/models/model.php";
-require dirname(__FILE__)."/service/vendor/autoload.php";
-use Abraham\TwitterOAuth\TwitterOAuth;
 
 $auth = new Auth();
 if (!$auth->checkLogin()) {
@@ -21,19 +19,9 @@ $user = array(
 	'auth_type' => 'twitter',
 	'name' => $settings->screen_name,
 );
+$user_data = $model->get_user(array('session_id' => $user['session_id']));
 
-$model = new Model();
-$isRegistration = Model::get_user(array('session_id' => $user['session_id']));
+$spending = Model::get_spending(array('user_id' => $user_data[0]['user_id']));
 
-$spending = array();
-if (0 < count($isRegistration)) {
-	$spending = Model::get_spending(array('user_id' => $isRegistration[0]['user_id']));
-} else {
-	Model::add_user($user);
-}
-
-
-$layout = 'index';
-$view = new View();
-$view->setData('spending', $spending);
-$view->render($layout);
+header("Content-Type: application/json; charset=utf-8");
+echo json_encode($spending);

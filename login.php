@@ -1,6 +1,6 @@
 <?php
-require dirname(__FILE__)."/app/common/config.php";
-require dirname(__FILE__)."/app/common/auth.php";
+require dirname(__FILE__)."/service/common/config.php";
+require dirname(__FILE__)."/service/common/auth.php";
 
 $auth = new Auth();
 $auth->goToLoginPage();

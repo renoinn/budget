@@ -1,0 +1,20 @@
+{
+  "name": "budget",
+  "version": "1.0.0",
+  "description": "budget web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renoinn/budget.git"
+  },
+  "author": "renoinn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renoinn/budget/issues"
+  },
+  "homepage": "https://github.com/renoinn/budget#readme",
+  "dependencies": {}
+}

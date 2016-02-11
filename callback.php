@@ -1,7 +1,7 @@
 <?php
-require dirname(__FILE__)."/app/common/config.php";
-require dirname(__FILE__)."/app/common/auth.php";
-require dirname(__FILE__)."/app/vendor/autoload.php";
+require dirname(__FILE__)."/service/common/config.php";
+require dirname(__FILE__)."/service/common/auth.php";
+require dirname(__FILE__)."/service/vendor/autoload.php";
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 session_start();

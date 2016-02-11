@@ -9,7 +9,6 @@ class Auth {
 
 	public function checkLogin() {
 		$this->info = $this->getLoginInfo();
-error_log(print_r($this->info, true));
 		if(!$this->info) {
 			return false;
 		}
@@ -44,6 +43,12 @@ error_log(print_r($this->info, true));
 	}
 
 	public function getLoginInfo() {
+		// アクセストークン取得
+		//$twitter = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $_GET['oauth_token'], $request_token_secret);
+		//$token = $twitter->oauth('oauth/access_token', array('oauth_verifier' => $_GET['oauth_verifier']));
+		//$this->setLoginInfo($token);
+
+
 		session_start();
 
 		if (!isset($_SESSION['screen_name']))
