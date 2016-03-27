@@ -1,0 +1,25 @@
+{
+  "name": "budget",
+  "description": "budget web app",
+  "main": "index.js",
+  "authors": [
+    "renoinn"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "budget"
+  ],
+  "homepage": "https://github.com/renoinn/budget",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0"
+  }
+}
